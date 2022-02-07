@@ -408,6 +408,7 @@ namespace TJAPlayer3
             public bool IsFixedSENote;
             public bool IsHitted = false;
             public bool IsMissed = false;
+            public bool HasElapsed = false;
 
             public bool bBPMチップである
             {
@@ -474,6 +475,7 @@ namespace TJAPlayer3
                 this.dbチップサイズ倍率 = 1.0;
                 this.bHit = false;
                 this.IsMissed = false;
+                this.HasElapsed = false;
                 this.b可視 = true;
                 this.e楽器パート = E楽器パート.UNKNOWN;
                 this.n透明度 = 0xff;

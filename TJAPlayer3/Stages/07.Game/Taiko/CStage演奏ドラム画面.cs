@@ -344,9 +344,11 @@ namespace TJAPlayer3
 			        this.soundRed = TJAPlayer3.Sound管理.tサウンドを生成する( CSkin.Path( @"Sounds\Taiko\dong.ogg" ), ESoundGroup.SoundEffect );
 			        this.soundBlue = TJAPlayer3.Sound管理.tサウンドを生成する( CSkin.Path( @"Sounds\Taiko\ka.ogg" ), ESoundGroup.SoundEffect );
 			        this.soundAdlib = TJAPlayer3.Sound管理.tサウンドを生成する( CSkin.Path(@"Sounds\Taiko\Adlib.ogg"), ESoundGroup.SoundEffect );
+			        this.soundDrumroll = TJAPlayer3.Sound管理.tサウンドを生成する( CSkin.Path(@"Sounds\Drumroll.ogg"), ESoundGroup.Voice );
                     this.soundRed2 = TJAPlayer3.Sound管理.tサウンドを生成する(CSkin.Path(@"Sounds\Taiko\dong.ogg"), ESoundGroup.SoundEffect);
                     this.soundBlue2 = TJAPlayer3.Sound管理.tサウンドを生成する(CSkin.Path(@"Sounds\Taiko\ka.ogg"), ESoundGroup.SoundEffect);
                     this.soundAdlib2 = TJAPlayer3.Sound管理.tサウンドを生成する(CSkin.Path(@"Sounds\Taiko\Adlib.ogg"), ESoundGroup.SoundEffect);
+                    this.soundDrumroll2 = TJAPlayer3.Sound管理.tサウンドを生成する( CSkin.Path(@"Sounds\Drumroll.ogg"), ESoundGroup.Voice );
 
 
                     if (TJAPlayer3.ConfigIni.nPlayerCount >= 2)//2020.05.06 Mr-Ojii左右に出したかったから、追加。
@@ -354,9 +356,11 @@ namespace TJAPlayer3
                         this.soundRed.n位置 = -100;
                         this.soundBlue.n位置 = -100;
                         this.soundAdlib.n位置 = -100;
+                        this.soundDrumroll.n位置 = -100;
                         this.soundRed2.n位置 = 100;
                         this.soundBlue2.n位置 = 100;
                         this.soundAdlib2.n位置 = 100;
+                        this.soundDrumroll2.n位置 = 100;
                     }
                 }
 
@@ -373,12 +377,16 @@ namespace TJAPlayer3
                     this.soundBlue.t解放する();
                 if( this.soundAdlib != null )
                     this.soundAdlib.t解放する();
+                if( this.soundDrumroll != null )
+                    this.soundDrumroll.t解放する();
                 if (this.soundRed2 != null)
                     this.soundRed2.t解放する();
                 if (this.soundBlue2 != null)
                     this.soundBlue2.t解放する();
                 if (this.soundAdlib2 != null)
                     this.soundAdlib2.t解放する();
+                if ( this.soundDrumroll2 != null )
+                    this.soundDrumroll2.t解放する();
                 base.OnManagedリソースの解放();
 			}
 		}

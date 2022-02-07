@@ -456,6 +456,7 @@ namespace TJAPlayer3
 				{
 					dTX.listChip[i].bHit = true;
 					dTX.listChip[i].IsHitted = true;
+					dTX.listChip[i].HasElapsed = true;
 					dTX.listChip[i].b可視 = false;
 					dTX.listChip[i].bShow = false;
 				}
@@ -463,6 +464,7 @@ namespace TJAPlayer3
 				{
 					dTX.listChip[i].bHit = true;
 					dTX.listChip[i].IsHitted = true;
+					dTX.listChip[i].HasElapsed = true;
 					dTX.listChip[i].b可視 = false;
 					dTX.listChip[i].bShow = false;
 				}
@@ -470,6 +472,7 @@ namespace TJAPlayer3
 				{
 					dTX.listChip[i].bHit = true;
 					dTX.listChip[i].IsHitted = true;
+					dTX.listChip[i].HasElapsed = true;
 				}
 
 			}

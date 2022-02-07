@@ -675,9 +675,11 @@ namespace TJAPlayer3
         protected CSound soundRed;
         protected CSound soundBlue;
         protected CSound soundAdlib;
+        protected CSound soundDrumroll;
         protected CSound soundRed2;
         protected CSound soundBlue2;
         protected CSound soundAdlib2;
+        protected CSound soundDrumroll2;
         public bool bDoublePlay; // 2016.08.21 kairera0467 表示だけ。
 		protected Stopwatch sw;		// 2011.6.13 最適化検討用のストップウォッチ
         public int ListDan_Number;
@@ -2718,6 +2720,29 @@ namespace TJAPlayer3
 
 				int instIndex = (int) pChip.e楽器パート;
 
+                if (!this.bPAUSE && !pChip.HasElapsed)
+                {
+                    if (time <= 0)
+                    {
+                        pChip.HasElapsed = true;
+
+                        if (pChip.nチャンネル番号 == 0x15 || pChip.nチャンネル番号 == 0x16 || pChip.nチャンネル番号 == 0x17)
+                        {
+                            if (TJAPlayer3.stage選曲.n確定された曲の難易度[nPlayer] == (int)Difficulty.Easy)
+                            {
+                                if (pChip.nPlayerSide == 0)
+                                {
+                                    this.soundDrumroll?.t再生を開始する();
+                                }
+                                else
+                                {
+                                    this.soundDrumroll2?.t再生を開始する();
+                                }
+                            }
+                        }
+                    }
+                }
+
                 if (!pChip.IsMissed && !pChip.bHit)
                 {
                     if ( pChip.nチャンネル番号 >= 0x11 && pChip.nチャンネル番号 <= 0x14 || pChip.nチャンネル番号 == 0x1A || pChip.nチャンネル番号 == 0x1B )//|| pChip.nチャンネル番号 == 0x9A )
@@ -3969,6 +3994,7 @@ namespace TJAPlayer3
                 dTX.listChip[i].b可視 = true;
                 dTX.listChip[i].IsHitted = false;
                 dTX.listChip[i].IsMissed = false;
+                dTX.listChip[i].HasElapsed = false;
                 dTX.listChip[i].eNoteState = ENoteState.none;
                 dTX.listChip[i].nProcessTime = 0;
                 dTX.listChip[i].nRollCount = 0;
