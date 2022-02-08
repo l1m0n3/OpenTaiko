@@ -371,6 +371,11 @@ namespace TJAPlayer3
                 new string[] { "Easy", "Normal", "Hard", "Oni", "Edit" });
             this.list項目リスト.Add(this.iTaikoDefaultCourse);
 
+			this.iTaikoMaxDrumrollVoiceDifficulty = new CItemList(CLangManager.LangInstance.GetString(10060), CItemBase.Eパネル種別.通常, TJAPlayer3.ConfigIni.nMaxDrumrollVoiceDifficulty,
+				CLangManager.LangInstance.GetString(10061),
+                new string[] { "Easy", "Normal", "Hard", "Oni", "Edit" });
+            this.list項目リスト.Add(this.iTaikoMaxDrumrollVoiceDifficulty);
+
             this.iTaikoScoreMode = new CItemList(CLangManager.LangInstance.GetString(82), CItemBase.Eパネル種別.通常, TJAPlayer3.ConfigIni.nScoreMode,
 				CLangManager.LangInstance.GetString(83),
                 new string[] { "TYPE-A", "TYPE-B", "TYPE-C"});
@@ -1342,6 +1347,7 @@ namespace TJAPlayer3
         
 		private CItemToggle iTaikoBranchGuide;
         private CItemList iTaikoDefaultCourse; //2017.01.30 DD デフォルトでカーソルをあわせる難易度
+		private CItemList iTaikoMaxDrumrollVoiceDifficulty;
         private CItemList iTaikoScoreMode;
         private CItemList iTaikoBranchAnime;
         private CItemToggle iTaikoNoInfo;
@@ -1502,6 +1508,7 @@ namespace TJAPlayer3
 
             TJAPlayer3.ConfigIni.bBranchGuide = this.iTaikoBranchGuide.bON;
             TJAPlayer3.ConfigIni.nDefaultCourse = this.iTaikoDefaultCourse.n現在選択されている項目番号;
+			TJAPlayer3.ConfigIni.nMaxDrumrollVoiceDifficulty = this.iTaikoMaxDrumrollVoiceDifficulty.n現在選択されている項目番号;
             TJAPlayer3.ConfigIni.nScoreMode = this.iTaikoScoreMode.n現在選択されている項目番号;
             TJAPlayer3.ConfigIni.ShinuchiMode = this.ShinuchiMode.bON;
             TJAPlayer3.ConfigIni.nBranchAnime = this.iTaikoBranchAnime.n現在選択されている項目番号;

@@ -765,7 +765,7 @@ namespace TJAPlayer3
         public bool bBranchGuide;
         public int nScoreMode;
         public int nDefaultCourse; //2017.01.30 DD デフォルトでカーソルをあわせる難易度
-
+		public int nMaxDrumrollVoiceDifficulty;
 
         public int nPlayerCount; //2017.08.18 kairera0467 マルチプレイ対応
         
@@ -1487,6 +1487,7 @@ namespace TJAPlayer3
             this.bBranchGuide = false;
             this.nScoreMode = 2;
             this.nDefaultCourse = 3;
+			this.nMaxDrumrollVoiceDifficulty = (int)Difficulty.Easy;
             this.nBranchAnime = 1;
 
             this.b大音符判定 = false;
@@ -1996,6 +1997,9 @@ namespace TJAPlayer3
 			sw.WriteLine();
 			sw.WriteLine("; デフォルトで選択される難易度");
 			sw.WriteLine("DefaultCourse={0}", this.nDefaultCourse);
+            sw.WriteLine();
+			sw.WriteLine("; 連打ボイスが再生される最高難易度");
+			sw.WriteLine("MaxDrumrollVoiceDifficulty={0}", this.nMaxDrumrollVoiceDifficulty);
             sw.WriteLine();
             sw.WriteLine( "; 譜面分岐のガイド表示(0:OFF, 1:ON)" );
 			sw.WriteLine( "BranchGuide={0}", this.bGraph.Drums ? 1 : 0 );
@@ -2819,6 +2823,10 @@ namespace TJAPlayer3
                                             else if ( str3.Equals( "DefaultCourse" ) ) //2017.01.30 DD
                                             {
                                                 this.nDefaultCourse = C変換.n値を文字列から取得して範囲内に丸めて返す( str4, 0, 4, this.nDefaultCourse );
+                                            }
+											else if ( str3.Equals( "MaxDrumrollVoiceDifficulty" ) )
+                                            {
+                                                this.nMaxDrumrollVoiceDifficulty = C変換.n値を文字列から取得して範囲内に丸めて返す( str4, 0, 4, this.nMaxDrumrollVoiceDifficulty );
                                             }
 											else if ( str3.Equals( "ScoreMode" ) )
 											{

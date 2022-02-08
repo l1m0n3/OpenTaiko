@@ -2728,7 +2728,7 @@ namespace TJAPlayer3
 
                         if (pChip.nチャンネル番号 == 0x15 || pChip.nチャンネル番号 == 0x16 || pChip.nチャンネル番号 == 0x17)
                         {
-                            if (TJAPlayer3.stage選曲.n確定された曲の難易度[nPlayer] == (int)Difficulty.Easy)
+                            if (TJAPlayer3.stage選曲.n確定された曲の難易度[nPlayer] <= TJAPlayer3.ConfigIni.nMaxDrumrollVoiceDifficulty)
                             {
                                 if (pChip.nPlayerSide == 0)
                                 {
